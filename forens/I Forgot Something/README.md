@@ -21,10 +21,11 @@ fcrackzip -v -D -u -p rockyou.txt chall.zip
 
 We got the password here : estrella. lets try using to open the flag.txt
 
-```<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
 
 Boom. we got the flag
 
 ## Flag
-
+```
 HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+```
