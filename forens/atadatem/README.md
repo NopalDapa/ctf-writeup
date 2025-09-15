@@ -28,6 +28,9 @@ if we read from backward. it will be ```https://pastebin.com/quC66zAQ```, when i
 
 <img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-54-32" src="https://github.com/user-attachments/assets/391d469b-50b4-458d-9707-341905527b0b" />
 
+<img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-59-32" src="https://github.com/user-attachments/assets/2938046e-235f-42ef-8e8d-daefc41dca72" />
+
+
 Boom. we got the flag
 
 ## Flag
