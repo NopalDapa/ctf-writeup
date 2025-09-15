@@ -24,8 +24,6 @@ UUF6NjZDdXEvbW9jLm5pYmV0c2FwLy86c3B0dGg=
 
 if we read from backward. it will be ```https://pastebin.com/quC66zAQ```, when i search it contains flag that encoded base64. lets submit again in cyber chef
 
-<img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-56-02" src="https://github.com/user-attachments/assets/3847038d-bdb1-4441-a0c5-01cda49c24e3" />
-
 <img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-54-32" src="https://github.com/user-attachments/assets/391d469b-50b4-458d-9707-341905527b0b" />
 
 <img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-59-32" src="https://github.com/user-attachments/assets/2938046e-235f-42ef-8e8d-daefc41dca72" />
