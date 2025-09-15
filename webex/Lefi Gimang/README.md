@@ -1,4 +1,4 @@
-# I Forgot Something
+# Lefi Gimang
 > LeFi is an attack technique in which attackers trick a web application into either running or exposing files on a web server.
 
 Author: anarchistx
