@@ -1,35 +1,31 @@
-# I Forgot Something
+# guessr 2
 > Abis capture network website gweh, tentunya gada yang aneh lah ya?
 
 Author: Rev
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a website like geoguesser. Here we are asked to find the exact location where the image was taken.
+
+<img width="1843" height="968" alt="Screenshot from 2025-09-15 22-00-30" src="https://github.com/user-attachments/assets/be3fc3f6-38ee-4404-8561-cf6c7d8912dd" />
 
 ## How to Solve?
 
 We initially tried a few common techniques:
 
-- Analyze chall.pcap using wireshark
+- Scan unique object with google lens
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
+I saw a unique statue. Let's scan the statue using Google Lens.
 
+<img width="872" height="961" alt="Screenshot from 2025-09-15 22-11-33" src="https://github.com/user-attachments/assets/2f496742-3ff4-4e63-9a6b-518980ea9e37" />
 
+here it shows that the statue is located at the Yevgeny Vakhtangov monument Москва (Moskow). Lets go to that place and Guess
 
-```
-
-
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="1834" height="961" alt="Screenshot from 2025-09-15 22-15-04" src="https://github.com/user-attachments/assets/2cd35392-c5b7-4337-92ef-9db1a7eeea29" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{p4y_4tt3nt10n_t0_7h3_d3t41l_1s_7h3_3z-e57_w4y}
 ```
