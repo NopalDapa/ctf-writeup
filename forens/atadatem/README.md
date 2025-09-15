@@ -1,31 +1,36 @@
-# I Forgot Something
-> I want to retrieve my files but I forgot the password. Can you help me?
-  Author: Rev
+# atadatem
+> look there are data that seperated!! you should combine them!
+
+Author: Bim
 
 ## About the Challenge
-This challenge gives a chall.zip files contain flag.txt. but is needed password
+This challenge gives a hcs.png
 
 ## How to Solve?
 
-We initially tried a few common techniques:
-
-- Bruteforcing the key with the Rockyou wordlist
-
-Lets try bruteforcing using rockyou wordlist with this command
-
+atadatem??? hmm... if read from the back, it says metadata. interesting...
+Lets read the metadata as the name of the challenge says, im using exiftool with this coomand
 ```
-fcrackzip -v -D -u -p rockyou.txt chall.zip
-
+exiftool hcs.png
 ```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
 
-We got the password here : estrella. lets try using to open the flag.txt
+<img width="743" height="488" alt="Screenshot from 2025-09-15 23-51-00" src="https://github.com/user-attachments/assets/00dea37f-f565-4524-95b5-818d67a75c00" />
 
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+I'm suspicious of the contents of the Comment, Description, and keywords. If we try to combine the three, they form a base64 decode.
+```
+UUF6NjZDdXEvbW9jLm5pYmV0c2FwLy86c3B0dGg=
+```
+<img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-56-02" src="https://github.com/user-attachments/assets/367f37af-28cd-4191-9f10-c0af3b9e1a83" />
+
+if we read from backward. it will be ```https://pastebin.com/quC66zAQ```, when i search it contains flag that encoded base64. lets submit again in cyber chef
+
+<img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-56-02" src="https://github.com/user-attachments/assets/3847038d-bdb1-4441-a0c5-01cda49c24e3" />
+
+<img width="1852" height="1010" alt="Screenshot from 2025-09-15 23-54-32" src="https://github.com/user-attachments/assets/391d469b-50b4-458d-9707-341905527b0b" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{metadata_can_be_useful_somewhere_somehow_sometime}
 ```
