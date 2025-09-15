@@ -1,11 +1,11 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# guessr 3
+> can you find out where this is before gta 6 released?
 
-Author: Rev
+Author: nblirwn, takanami
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a 
 
 ## How to Solve?
 
