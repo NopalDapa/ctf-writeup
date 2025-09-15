@@ -5,31 +5,35 @@ Author: nblirwn, takanami
 
 
 ## About the Challenge
-This challenge gives a 
+This challenge gives a website like geoguesser. Here we are asked to find the exact location where the image was taken.
+
+<img width="1834" height="961" alt="Screenshot from 2025-09-15 22-20-48" src="https://github.com/user-attachments/assets/b6d7e951-ec8b-49a5-9151-70e5ad7850d9" />
+
 
 ## How to Solve?
 
 We initially tried a few common techniques:
 
-- Analyze chall.pcap using wireshark
+- Find unique object and search or lens it
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
+Here i found mark road that said DT317G. When i lens it i dont get anything. so i search DT317 using google maps. it's located on Hao Binh, vietnam. 
 
+<img width="1834" height="961" alt="Screenshot from 2025-09-15 22-25-39" src="https://github.com/user-attachments/assets/1f7d0bf5-57b2-4a43-837b-1d1711de2263" />
 
+When i tracking the road using view 360. i dont sure this pict taken on main road DT317. because round the photo taken is a lake / swamp. Meanwhile, on the main road DT317 is full of residential areas, and on the right side of the main road there is a large river. 
 
-```
+I assumed it might be on a small road. So I walked along the small roads around the main road until I found a location similar to where the photo was taken.
 
+<img width="1834" height="1003" alt="Screenshot from 2025-09-15 22-30-41" src="https://github.com/user-attachments/assets/a7ce8037-8669-421c-a63a-e694e3a01418" />
 
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
+Lets guess that location on 
+Guess set: 21.13502, 105.28151
 
-We got the password here : estrella. lets try using to open the flag.txt
+<img width="1834" height="1003" alt="Screenshot from 2025-09-15 22-32-00" src="https://github.com/user-attachments/assets/57761754-ad5a-4c02-8d67-a9b2e0251d13" />
 
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
-
-Boom. we got the flag
+BOOM. We got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{h4rd_w0rk_w1ll_p4y_y0u_0u7_4_fl4g}
 ```
