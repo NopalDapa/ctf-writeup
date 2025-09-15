@@ -13,23 +13,22 @@ We initially tried a few common techniques:
 
 - Analyze chall.pcap using wireshark
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
+Lets try open this pcap using wireshark. i can see many export object using http. lets save them all
 
+<img width="766" height="561" alt="Screenshot from 2025-09-15 10-58-08" src="https://github.com/user-attachments/assets/9104b8eb-9ebd-4889-aa71-fd1d67fd7a08" />
 
+lets see what file we got. we got read.php here. we can cat it, and we got msg encoded by base 64
 
-```
+<img width="748" height="534" alt="Screenshot from 2025-09-15 11-02-11" src="https://github.com/user-attachments/assets/8af9829d-29fd-49cd-95b7-7b5a6f38a8c1" />
 
+lets decode it with CyberChef
 
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
+<img width="1850" height="1009" alt="Screenshot from 2025-09-15 11-02-24" src="https://github.com/user-attachments/assets/291344dd-b1c0-43b2-8ed0-05d1f3c00117" />
 
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{kalian_langsung_filter_flagnya_atau_perhatiin_apa_attackernya_lakukan_hehe}
 ```
