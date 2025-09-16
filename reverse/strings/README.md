@@ -1,35 +1,24 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# Strings
+> Soal yang wajib ada di ctf pemerintah
 
-Author: Rev
+Author: Hanz
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a chal bin ELF
 
 ## How to Solve?
 
-We initially tried a few common techniques:
-
-- Analyze chall.pcap using wireshark
-
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
-
+just read strings using
+```
+strings chal
 ```
 
-
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="786" height="533" alt="Screenshot from 2025-09-16 14-33-08" src="https://github.com/user-attachments/assets/830900d9-1fae-4e48-bf6c-091c1a23052c" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{ctf_gjls_hadiah_elit__ayaya}
 ```
