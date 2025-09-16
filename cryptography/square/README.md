@@ -1,35 +1,46 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# Square
+> RSA is very easy that I can implement my own!
 
-Author: Rev
+Author: Hanz
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a chal.py. but its incomplete
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+here im adding function import dependency
+```
+import math
+from Crypto.Util.number import inverse, long_to_bytes
+```
+and I added a code section that takes the square root of N to get p.
+Calculate phi = p(p-1).
+Find d = e⁻¹ mod phi.
+Decrypt the ciphertext ct with m = ct^d mod N.
+Display the resulting plaintext. so the final code will be like this
+```
+import math
+from Crypto.Util.number import inverse, long_to_bytes
+e = 0x10001
+N = 21541800301192232014517202165412625094931695913164599975569157128232146089171300293678474808384855794086078814006810923631991331758895189968077257664801401349409195204180782061936397452574926250596148515837153809410943948038788634436527851012832822806373385466520949593420667657089983604355362661125427898525082805303008148206009981973943118917358398434585564741326047198888298309110188602078542887123319941536966163254961134273160983840654013709791372133147049303937488822991010462626117817658890197475186929755975726766797014365525684586160856619508893019386661217885417372093773624536889044601345891340353445957041
+ct = 8088116244766019483309701688819826250661842431328142103976015906811447261401523673713317947626782314922703222107051890688274695011147650052187009669953788734643296735599173856835918536158555225780013386411926183172002072470275045756087567557789070974506175750413094196121939662373077053522717392702200767345233292049895960656410593041191978740470159828964571047703024585266337043540973583736222234620044101650675504724790292073637984832696947731505667414713300475200800558368070629762227982414443123442539528170838576802996221065167959475605485954075793163964964704059010064163486744019964115296723955701150326849344
 
-- Analyze chall.pcap using wireshark
-
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
+root = math.isqrt(N)
+phi = root * (root - 1)
+d = inverse(e, phi)
+pt = pow(ct, d, N)
+print(long_to_bytes(pt))
 
 ```
+run it, and
 
+<img width="786" height="533" alt="Screenshot from 2025-09-16 21-51-57" src="https://github.com/user-attachments/assets/24dce04b-a868-4988-be92-068061d55e51" />
 
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{this_math_thing_is_confusing__ayaya}
 ```
