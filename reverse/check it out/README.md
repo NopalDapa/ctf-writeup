@@ -1,35 +1,21 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# Check It Out
+> Don't forget to check it.
 
-Author: Rev
+Author: TinyTidy
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a main.java
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+i Think this is a bonus? just read the main.java and u got the flag
 
-- Analyze chall.pcap using wireshark
-
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
-
-```
-
-
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="1444" height="825" alt="Screenshot from 2025-09-16 14-26-54" src="https://github.com/user-attachments/assets/3eec8df7-4c10-4a78-b1fc-eb121e87c0d6" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{Ju4G0_Bw4nG}
 ```
