@@ -1,31 +1,33 @@
-# I Forgot Something
-> I want to retrieve my files but I forgot the password. Can you help me?
-  Author: Rev
+# Blind File
+> Ohh noooo! what is thisss??? can you help me?!?!
+
+Author: Bim
 
 ## About the Challenge
-This challenge gives a chall.zip files contain flag.txt. but is needed password
+This challenge gives Blind file (dont have type)
 
 ## How to Solve?
 
 We initially tried a few common techniques:
 
-- Bruteforcing the key with the Rockyou wordlist
+- Check detail file using exiftool
 
-Lets try bruteforcing using rockyou wordlist with this command
-
-```
-fcrackzip -v -D -u -p rockyou.txt chall.zip
+Lets try check this file using this coomand
 
 ```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
+exiftool file
 
-We got the password here : estrella. lets try using to open the flag.txt
+```
 
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="742" height="486" alt="Screenshot from 2025-09-16 10-30-50" src="https://github.com/user-attachments/assets/f602e210-0c21-465c-a561-ba4c1467f4e8" />
+
+hmm... this file type is ZIP. just extract it. and we got secret.pdf. lets open it
+
+<img width="1500" height="606" alt="Screenshot from 2025-09-16 10-34-07" src="https://github.com/user-attachments/assets/45fddbf1-f5c5-4d7f-bca6-599ceea01baa" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{file_with_no_extension_still_exist_nowadays_XDD}
 ```
