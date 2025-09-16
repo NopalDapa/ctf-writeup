@@ -1,35 +1,22 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# based
+> They didn’t hide the flag… they just buried it alive.
 
-Author: Rev
+Author: Vaa
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a chall.zip. when we extract it, give me out.txt
+```Vm0wd2QyUXlWa1pPVldSWFYwZG9WRll3Wkc5V1ZteDBaRWhrVmxac2NEQlVWbHBQVm1zeFdHVkliRmhoTVhCUVZtcEdTMlJIVmtkaVJuQk9UVEJLU1ZadE1IaFRNVWw1Vkd0c2FWSnRVbGhVVkVaTFpWWmFkR05GU214U2JWSllWVzAxUzJGc1NuVlJiVGxhVjBoQ1dGcFdXbUZqTVZwMFVteHdWMDFWY0ZsV1Z6QXhWREpHYzFOdVVtaFNiWGhYVkZWYVlWUkdVblJsUjBacVRWZFNNRlZ0ZUc5aFZscHlWMVJDVjAxdVVuWldha1phWlZaT2NscEhjRk5pUlhCb1YxWlNSMWxXYkZkVmJGcFlZbGhTV0ZSV1dtRmxWbVJ5VjIxMFZXSkdjREZWVjNodlZqRktjMk5HYUZkaGEzQklWbXBHVDJSV1VuTmhSMnhvVFVoQ1dWWXhaREJaVjFGNFYxaG9WbUpIVWxsWmJGWmhWMFpzY2xwR1RrNVNia0pIVmpJeFIxWlhTa2RqUm1oYVRVWkthRlpxUm1Ga1JsWlZVV3hrYUdFeGNGVlhXSEJIWVRKU1YxWnVVbXhTYkVwVVZqQldTMlJzV25STldHUlZUVlZXTkZWc2FHOVdiVXB5VGxac1dtRXlhRVJaZWtaWFpFVTFWbFJzVWxkaVdGRjZWbXBLTUZReFdYZE5XRXBYWVdzMVlWUlZXbmRrYkZweFVtdHdiR0pWV2toWlZWcGhZa2RGZUdOR2JGZGlXRUpJV1ZSS1QyTXhaSFZVYkZacFZqTm9kbFpHV205Uk1sSnpWMjVPVm1Fd05XOVpXSEJYVmpGU1ZtRkhPVmRpUjFKSldWVmFjMWR0UlhoV1dHaFhUVlp3YUZwRlZYaFdWbEp5VGxkc1UwMHlaekZXYlhCTFRVZEZlRmRZWkU1WFJYQnhWVzB4TkZkV2JGVlNhM1JvVW14d2VGVnRNVWRXTURGeVRsVm9WMUo2UmtoV2FrWmhaRlpHYzFWc2FHbFNiSEI1Vm10U1IxTXhXWGhqUld4VVlYcHNXRmxZY0ZkV1ZscEhWV3QwYVUxWFVraFdNV2h2VjBkS1JrNVdUbFZXYkhBeldsWmFVMk14WkhSa1JtUk9ZVEZaTVZac1pEUmpNV1IwVTJ0a1ZHSnVRbGhWYTFaaFZrWmFjVkp0Um1waVZrcElWMnRrYzFVeVJYcFJiSEJYWVd0dmQxbHFSbEpsUm1SMVZXeFNhRTFzU25oV1YzaGhaREZaZUZkdVVteFNXRkpaVlcxNGQyVkdWblJrUkVKb1lYcEdXVlpYTlhOWFIwVjRZMFpvVjFJemFHaGFSbHBIWTJ4YWMxcEhhR2hOU0VKMlZtMTBVMU14VVhsVVdHaFdZbXhhVmxsclZURmpSbFp4VW10MFYxWnNjRmxhVldSSFlUSktWMUpxVWxkTmFsWlVXV3RhU21ReFpITmFSbkJwVW01Q1NWWkdVa2RWYlZaSFdraEthMUpzY0ZoWmEyaERVakZhVjFkc1RtcGlSVXBUVlVaUmQxQlJQVDA9```
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+based? let's try decode this from base64 multiple time using cyberchef
 
-- Analyze chall.pcap using wireshark
+<img width="1852" height="1013" alt="Screenshot from 2025-09-16 21-16-19" src="https://github.com/user-attachments/assets/52312b23-c422-4ec9-85dc-837aae96294d" />
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
-
-```
-
-
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
-
-Boom. we got the flag
+Boom. we got the flag at 11 times decode by base64
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{ju5t_b4s3_64_l0l}
 ```
