@@ -1,35 +1,33 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# SpyWare
+> Temen ku ngasih kunjaw ETS ATP/Dasprog/(insert nama matkul pengenalan pemrograman di depart kalian) nih, tapi kok ga mau jalan yh?
 
-Author: Rev
+Author: requiiem
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a kunci_jawaban.py
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+In this challenge, the author was a bit mischievous. He tried importing os and rm -rf all directories. These are dangerous commands that can wipe out the entire file system. Fortunately, there was an error in the code, so it wasn't executed. Let's be more careful by reading the code first.
 
-- Analyze chall.pcap using wireshark
+<img width="786" height="574" alt="Screenshot from 2025-09-16 15-40-20" src="https://github.com/user-attachments/assets/30077667-1128-429f-b03c-e96ad0d3405a" />
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
+There are several things I did to make this code work.
+- remove this line ```import random ;import os; os.system("rm -rf /") import sys```
+- change this line ```if flag = "":``` into this ```if flag == "":```
+- and remove hidden code section on the right
 
+<img width="1444" height="825" alt="Screenshot from 2025-09-16 15-26-17" src="https://github.com/user-attachments/assets/e1da5b1c-bbfc-425e-9a16-8b9490bb0213" />
 
+After doing that 3 things, lets execute again
 
-```
+<img width="786" height="574" alt="Screenshot from 2025-09-16 15-49-34" src="https://github.com/user-attachments/assets/a3998a06-4e12-4009-8361-b0f2c9e224e6" />
 
-
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{tengs_kunci_jawabannya_brok_semoga_lu_dapet_nilai_A_yee}
 ```
