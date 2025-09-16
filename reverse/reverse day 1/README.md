@@ -9,21 +9,56 @@ This challenge gives a chall zip
 
 ## How to Solve?
 
-first lets extract it
+first lets extract it. here we got file elf namely day1. lets dissasemmble that to know what it does using this command
 
 ```
-
+objdump -d day1 > test.asm
 
 ```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
+now, we got asm file. when we analyze There's a check() function around 121c that:
 
-We got the password here : estrella. lets try using to open the flag.txt
+Has hardcoded bytes that get XORed with 0x5e
 
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+Compares the result with the input flag
+
+And then at 1306: xor -0x69(%rbp),%al - this XORs each byte with 0x5e.
+
+```
+121c:       48 b8 16 1d 0d 25 2c    movabs $0x3b283b2c250d1d16,%rax
+1223:       3b 28 3b 
+1226:       48 ba 2c 2d 3b 01 37    movabs $0x3b012d37013b2d2c,%rdx
+122d:       2d 01 3b 
+1230:       48 89 45 b0             mov    %rax,-0x50(%rbp)
+1234:       48 89 55 b8             mov    %rdx,-0x48(%rbp)
+1238:       c7 45 c0 3f 24 27 27    movl   $0x2727243f,-0x40(%rbp)
+123f:       66 c7 45 c4 27 27       movw   $0x2727,-0x3c(%rbp)
+1245:       c6 45 c6 23             movb   $0x23,-0x3a(%rbp)
+1249:       c6 45 97 5e             movb   $0x5e,-0x69(%rbp)
+```
+
+so i made solve.py to get the flag using XORs each byte with 0x5e
+
+```
+bytes1 = [0x16, 0x1d, 0x0d, 0x25, 0x2c, 0x3b, 0x28, 0x3b]
+bytes2 = [0x2c, 0x2d, 0x3b, 0x01, 0x37, 0x2d, 0x01, 0x3b]
+bytes3 = [0x3f, 0x24, 0x27, 0x27]
+bytes4 = [0x27, 0x27]
+bytes5 = [0x23]
+
+all_bytes = bytes1 + bytes2 + bytes3 + bytes4 + bytes5
+xor_key = 0x5e
+
+flag = ''.join(chr(b ^ xor_key) for b in all_bytes)
+print('Flag:', flag)
+
+```
+lets run it
+
+<img width="786" height="533" alt="Screenshot from 2025-09-16 14-17-28" src="https://github.com/user-attachments/assets/3ade9650-964e-4b81-90fb-40c5cd31f1c2" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{reverse_is_eazyyyy}
 ```
