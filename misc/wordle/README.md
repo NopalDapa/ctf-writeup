@@ -1,35 +1,25 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# Wordle
+> ini challenge gampang sih...
 
-Author: Rev
+Author: roxasz
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a wordle game.In the game, players have six attempts to guess a five-letter word, receiving feedback through colored tiles that indicate correct letters and their placement.
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+Just play normally wordle. here i use helper to solve easiest https://www.thewordfinder.com/wordle-solver/#
 
-- Analyze chall.pcap using wireshark
+<img width="1841" height="1016" alt="Screenshot from 2025-09-16 11-05-48" src="https://github.com/user-attachments/assets/c53d94ed-57bc-4285-aa18-f69af23d2b35" />
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
+let's grind until we succeed, haha
 
-
-
-```
-
-
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="786" height="533" alt="Screenshot from 2025-09-16 11-05-26" src="https://github.com/user-attachments/assets/eeb93e3b-7616-4f8c-9161-19b95fd84348" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{u_guessed_the_word!!!_18ceec8b-f2d0-45c6-b72e-4357d6eb21d9}
 ```
