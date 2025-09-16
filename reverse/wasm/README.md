@@ -1,4 +1,4 @@
-# for_that_special_someone
+# WASM (Weird Assembly)
 > Aku buat program yang nyusun bouquet buat orang yang spesial. Tapi pas aku balik ke komputer ku kok programnya malah jadi kaya code assembly aneh ya?
 ps. coba kalian bikin bouquet terbaik buat orang yang spesial 💐
 
