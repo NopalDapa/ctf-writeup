@@ -80,6 +80,7 @@ I think this challenge about buffer overflow. we should overwrite key[srynottday
 we can see. there is buffer key and message offset. convert it to decimal 
 
 key offset: -0x13 = -19 decimal
+
 message offset: -0x30 = -48 decimal
 
 from that we can count offset to lead buffer overflow goes to key using
