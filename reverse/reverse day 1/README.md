@@ -1,21 +1,15 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# Reverse Day 1
+> Ketika pertama kali belajar reverse engineering, biasanya challenge bisa di-solved cukup dengan strings. Sayangnya, kali ini strings saja belum bisa untuk mendapatkan flag.
 
-Author: Rev
+Author: Erzyyyy
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a chall zip
 
 ## How to Solve?
 
-We initially tried a few common techniques:
-
-- Analyze chall.pcap using wireshark
-
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
+first lets extract it
 
 ```
 
