@@ -1,35 +1,42 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# nothing
+> A subtitution cipher? naah, this is Nothing Cipher (TM)
 
-Author: Rev
+Author: Hanz
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a chall.zip. when we extract it, given chall.py. There is a dictionary that maps the numbers 1-255 to whitespace patterns (space + tab). The flags are encoded using whitespace steganography. Each flag section is a pattern of spaces followed by tabs, which corresponds to a value in the sbox.
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+To decrypt:
 
-- Analyze chall.pcap using wireshark
+Split the flag at each tab (\t) to get the sections (each section is a space without a tab).
+For each section, count the number of spaces (len(p)), then add 1 to get the key (since the SBox starts at 1).
+Collect these keys into a list, convert them to bytes, and then decode them to a UTF-8 string.
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
+replace def decrypt() to this code
 
-
+```
+def decrypt():
+    parts = flag.split('\t')
+    bytes_list = []
+    for p in parts[:-1]:  # last part is empty
+        num_spaces = len(p)
+        key = num_spaces + 1
+        bytes_list.append(key)
+    b = bytes(bytes_list)
+    print(b.decode('utf-8', errors='replace'))
 
 ```
 
+then run it, and
 
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="786" height="533" alt="Screenshot from 2025-09-16 21-33-21" src="https://github.com/user-attachments/assets/6f088137-562a-4124-a158-3e10538db969" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{sbox_is_very_cool__ayaya}
 ```
