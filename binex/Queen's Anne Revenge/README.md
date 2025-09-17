@@ -33,8 +33,7 @@ import sys
 sys.stdout.buffer.write(payload)
 
 ```
-
-lalu tinggal kita jalankan dengan command
+then we just run it with the command
 ```
 python3 exploit.py | nc intersec.hcs-team.com 10131
 ```
