@@ -1,35 +1,46 @@
-# I Forgot Something
-> Abis capture network website gweh, tentunya gada yang aneh lah ya?
+# SnakeV3
+> pawang ular
+ps, run dengan menggunakan command python -m http.server di directory yang sama dengan file file yang diberikan
 
-Author: Rev
+Author: requiiem
 
 
 ## About the Challenge
-This challenge gives a chall.pcap
+This challenge gives a Snakev3.zip when extracted it produces app.css, app.js, index.html and game.wasm
 
 ## How to Solve?
 
-We initially tried a few common techniques:
+Let's focus on game.wasm. Extract it to see what's going on inside. we use command
 
-- Analyze chall.pcap using wireshark
-
-Lets try open this pcap using wireshark. i can see many export object using http. lets save them
-
-
+```
+wasm2wat game.wasm -o game.wat
 
 ```
 
+<img width="963" height="710" alt="Screenshot from 2025-09-18 15-05-13" src="https://github.com/user-attachments/assets/48b0b44b-dbc9-4736-82b1-810c0c304cdf" />
+
+If we look closely, there are two relevant areas in the memory file:
+
+encrypted_flag is at memory offset 1072
+key is at memory offset 1104
+If we read both 23-byte blocks and XOR each byte, the result is the flag
+
+So, we create a Uint8Array view: new Uint8Array(instance.exports.memory.buffer, encPtr, LEN)
+Do a byte-by-byte XOR: out[i] = enc[i] ^ key[i]
+Terminate at null (0x00) if found, or use all 23 bytes. Then decode to string (utf-8).
+i made solve.js like this
 
 ```
-<img width="746" height="489" alt="Screenshot from 2025-09-15 10-33-18" src="https://github.com/user-attachments/assets/9abd5d4a-28f1-4f63-af5d-b427ebd485d8" />
+const fs=require('fs');(async()=>{const b=fs.readFileSync('game.wasm');const {instance}=await WebAssembly.instantiate(b,{});const e=instance.exports;const g=v=>typeof v=='object'&&v&&'value' in v?v.value:v;const p=g(e.encrypted_flag),k=g(e.key);const L=23,mem=new Uint8Array(e.memory.buffer);let out='';for(let i=0;i<L;i++)out+=String.fromCharCode(mem[p+i]^mem[k+i]);console.log(out.replace(/\0.*$/,''))})();
 
-We got the password here : estrella. lets try using to open the flag.txt
+```
 
-<img width="911" height="901" alt="Screenshot from 2025-09-15 10-34-09" src="https://github.com/user-attachments/assets/bf4df688-9b68-4cc0-89d6-1bab111ca483" />
+<img width="786" height="574" alt="Screenshot from 2025-09-18 15-14-48" src="https://github.com/user-attachments/assets/5da38d83-806d-48f5-a67c-774281492fb0" />
+
 
 Boom. we got the flag
 
 ## Flag
 ```
-HCS{makasih_udah_berhasil_bantuin_aku_buat_dapetin_filenya_ehe}
+HCS{baby_s_first_wasm}
 ```
